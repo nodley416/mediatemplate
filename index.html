@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multimedia Page</title>
+<meta charset="UTF-8"/>
+<meta name="description" content="Assignment for Multimedia Page">
+<link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="pagebox">
+<header>
+<h1>Post Apocalyptic Media</h1>
+</header>
+
+<nav>
+<div class="topnav">
+<a href="#">Home</a>
+<a href="#">Content</a>
+<a href="#">About Us</a>
+</div>
+</nav>
+
+<article>
+<section>
+<h2>The Last of Us</h2>
+<p>
+<img class="tlou" src="images/pic1.jpg" alt="A screenshot I took of The Last of Us">
+The Last of Us is a beautiful post apocalyptic game, though it does have some ludonarrative dissonance. Despite
+that I highly recommend it.
+</p>
+<hr/>
+<section>
+
+<section>
+<h2>Roadside Picnic</h2>
+<p>
+<img class="book" src="images/picnic.jpg" alt="Book cover for Roadside Picnic">
+One of my favorite books I have read this year is <i>Roadside Picnic</i>. It is written by Arkady and Boris Strugatsky
+and published in 1972 during the Soviet Union. I highly recommend this book.
+</p>
+<hr/>
+</section>
+
+<section>
+<h2>Stalker Directed by Andrey Tarkovsky</h2>
+<div class="video_container">
+<iframe src="https://invidious.nerdvpn.de/embed/YuOnfQd-aTw?"></iframe>
+<p>
+This is a really unique film, this is based on <i>Roadside Picnic</i>.
+</p>
+<hr/>
+</section>
+
+<section>
+<h2>Sound</h2>
+<audio controls>
+<source src="audio/he_was_a_good_stalker.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<p>
+Credit for this audio goes to <a href="https://www.youtube.com/watch?v=V_-fba2hBG4">Zvonko Cosic</a>
+for his cover of he was a good stalker for the video game S.T.A.L.K.E.R.
+</p>
+<hr/>
+</section>
+
+
+<section id="slideshow">
+<h2>Slideshow</h2>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+	<div class="numbertext">1 / 2</div>
+	<img src="images/metro.jpg" style="width:100%">
+	<div class="text">Metro 2033 the first in the series</div>
+</div>
+
+<div class="mySlides fade">
+	<div class="numbertext">2 / 2</div>
+	<img src="images/daysgone.jpg" style="width:100%">
+	<div class="text">Days Gone Video Game</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+</div>
+
+	
+<footer>
+<p>This page was created by Ryan &copy; 2026</p>
+</footer>
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
